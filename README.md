@@ -91,7 +91,7 @@ npx cypress run --reporter mochawesome
 
 ## 📊 Relatório de Testes
 
-Após executar `npx cypress run`, o relatório é gerado automaticamente na pasta `mochawesome-report/`. Abra o arquivo `index.html` no navegador para visualizar os resultados.
+Após executar `npx cypress run`, o relatório é gerado automaticamente na pasta `results/`. Abra o arquivo gerado no navegador para visualizar os resultados.
 
 ---
 
