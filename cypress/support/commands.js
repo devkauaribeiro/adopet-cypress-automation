@@ -1,3 +1,29 @@
+Cypress.Commands.add('login', (email, senha) => {
+  cy.get('[data-test="input-loginEmail"]').type(email);
+  cy.get('[data-test="input-loginPassword"]').type(senha);
+  cy.get('[data-test="submit-button"]').click();
+})
+
+Cypress.Commands.add('loginIncorreto', (email, senha) => {
+  cy.get('[data-test="input-loginEmail"]').type(email);
+  cy.get('[data-test="input-loginPassword"]').type(senha);
+  cy.get('[data-test="submit-button"]').click();
+})
+
+Cypress.Commands.add('cadastro', (nome, email, senha) => {
+  cy.get('[data-test="input-name"]').type(nome);
+  cy.get('[data-test="input-email"]').type(email);
+  cy.get('[data-test="input-password"]').type(senha);
+  cy.get('[data-test="input-confirm-password"]').type(senha);
+  cy.get('[data-test="submit-button"]').click();
+})
+
+Cypress.Commands.add('cadastroIncorreto', () => {
+  cy.get('[data-test="submit-button"]').click();
+  cy.contains("É necessário informar um endereço de email").should("be.visible");
+  cy.contains("Crie uma senha").should("be.visible");
+  cy.contains("Repita a senha criada acima").should("be.visible");
+})
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
